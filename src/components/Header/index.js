@@ -18,7 +18,7 @@ const styles = theme => ({
   }
 });
 
-export const Header = () => {
+export const Header = ({ toggleTheme }) => {
   const theme = useTheme();
   const { container, title, subtitle } = styles(theme);
 
@@ -28,7 +28,7 @@ export const Header = () => {
         <h1 css={title}>Social Media Dashboard</h1>
         <h2 css={subtitle}>Total follower: 23,004</h2>
       </div>
-      <p>Toggle goes here</p>
+      <button onClick={toggleTheme}>Toggle goes here</button>
     </div>
   );
 };

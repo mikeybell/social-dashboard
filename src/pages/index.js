@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { ThemeProvider } from "emotion-theming";
-import { theme } from "../theme";
+import { lightTheme, darkTheme } from "../theme";
 
 const IndexPage = () => {
+  const [theme, setTheme] = useState(true);
+  const toggleTheme = () => setTheme(!theme);
+
   return (
-    <ThemeProvider theme={theme.light}>
+    <ThemeProvider theme={theme ? lightTheme : darkTheme}>
       <Layout>
-        <Header />
+        <Header toggleTheme={toggleTheme} />
       </Layout>
     </ThemeProvider>
   )
