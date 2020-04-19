@@ -1,8 +1,10 @@
 import React from "react"
 import "./layout.css"
 
-export const Layout = ({ children }) => (
+const Layout = ({ children }) => (
   <>
     <main>{children}</main>
   </>
 );
+
+export default Layout
