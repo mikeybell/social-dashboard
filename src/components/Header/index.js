@@ -11,7 +11,7 @@ const styles = theme => ({
   },
   title: {
     marginBottom: 0,
-    color: theme.colors.text.primary
+    color: theme.colors.text.primary,
   },
   subtitle: {
     color: theme.colors.text.secondary

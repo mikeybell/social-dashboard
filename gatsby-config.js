@@ -28,5 +28,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `inter\:400,700`,
+        ],
+        display: 'swap'
+      }
+    }
   ],
 }
