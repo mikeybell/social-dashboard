@@ -1,15 +1,17 @@
-import React from "react"
-import Layout from "../components/Layout"
-import styled from "@emotion/styled"
+import React from "react";
+import { Layout } from "../components/Layout";
+import { Header } from "../components/Header";
+import { ThemeProvider } from "emotion-theming";
+import { theme } from "../theme";
 
-const Hello = styled.p`
-  color: pink;
-`
-
-const IndexPage = () => (
-  <Layout>
-    <Hello>Hello world</Hello>
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <ThemeProvider theme={theme.light}>
+      <Layout>
+        <Header />
+      </Layout>
+    </ThemeProvider>
+  )
+};
 
 export default IndexPage
