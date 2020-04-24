@@ -5,7 +5,7 @@ import "./normalize.css"
 
 const styles = theme => ({
   base: {
-    background: theme.colors.ui[100],
+    background: theme.color.ui[100],
     display: "flex",
     flexDirection: "column",
     alignItems: "center"

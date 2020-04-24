@@ -11,10 +11,10 @@ const styles = theme => ({
   },
   title: {
     marginBottom: 0,
-    color: theme.colors.text.primary,
+    color: theme.color.text.primary,
   },
   subtitle: {
-    color: theme.colors.text.secondary
+    color: theme.color.text.secondary
   }
 });
 
