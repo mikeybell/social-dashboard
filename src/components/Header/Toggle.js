@@ -5,12 +5,20 @@ import { useTheme } from "emotion-theming";
 const styles = (theme, checked) => ({
   container: {
     display: "flex",
+    "@media(max-width: 375px)": {
+      justifyContent: "space-between",
+      width: "100%",
+      marginTop: 20,
+      paddingTop: 20,
+      borderTop: `1px solid ${theme.color.text.secondary}`
+    }
   },
   text: {
     fontSize: "0.8rem",
     fontWeight: 700,
     color: theme.color.text.secondary,
-    marginRight: 10
+    marginRight: 10,
+    marginBottom: 0
   },
   button: {
     background: theme.toggle,
