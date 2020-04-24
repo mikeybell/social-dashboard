@@ -5,13 +5,13 @@ import { ThemeProvider } from "emotion-theming";
 import { lightTheme, darkTheme } from "../theme";
 
 const IndexPage = () => {
-  const [theme, setTheme] = useState(true);
-  const toggleTheme = () => setTheme(!theme);
+  const [checked, setChecked] = useState(true);
+  const toggleTheme = () => setChecked(!checked);
 
   return (
-    <ThemeProvider theme={theme ? lightTheme : darkTheme}>
+    <ThemeProvider theme={checked ? lightTheme : darkTheme}>
       <Layout>
-        <Header toggleTheme={toggleTheme} />
+        <Header toggleTheme={toggleTheme} checked={checked} />
       </Layout>
     </ThemeProvider>
   )

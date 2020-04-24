@@ -13,7 +13,7 @@ const styles = theme => ({
   wrapper: {
     width: "100%",
     maxWidth: 1000,
-    padding: 24
+    padding: "72px 24px"
   }
 })
 

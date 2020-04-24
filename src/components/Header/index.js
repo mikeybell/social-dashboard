@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { useTheme } from "emotion-theming";
+import { Toggle } from "./Toggle";
 
 const styles = theme => ({
   container: {
@@ -10,15 +11,17 @@ const styles = theme => ({
     alignItems: "center"
   },
   title: {
-    marginBottom: 0,
+    marginBottom: 5,
     color: theme.color.text.primary,
   },
   subtitle: {
-    color: theme.color.text.secondary
+    marginBottom: 0,
+    color: theme.color.text.secondary,
+    fontSize: "1rem"
   }
 });
 
-export const Header = ({ toggleTheme }) => {
+export const Header = ({ toggleTheme, checked }) => {
   const theme = useTheme();
   const { container, title, subtitle } = styles(theme);
 
@@ -26,9 +29,9 @@ export const Header = ({ toggleTheme }) => {
     <div css={container}>
       <div>
         <h1 css={title}>Social Media Dashboard</h1>
-        <h2 css={subtitle}>Total follower: 23,004</h2>
+        <h2 css={subtitle}>Total followers: 23,004</h2>
       </div>
-      <button onClick={toggleTheme}>Toggle goes here</button>
+      <Toggle toggleTheme={toggleTheme} checked={checked} />
     </div>
   );
 };
