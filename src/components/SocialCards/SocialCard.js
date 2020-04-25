@@ -2,6 +2,7 @@
 import { jsx } from "@emotion/core";
 import { useTheme } from "emotion-theming";
 import { upIcon, downIcon } from "../icons";
+import { isPostive, formatNumber } from "../utils";
 
 const styles = (theme, borderColor, todayColor) => ({
   container: {
@@ -57,7 +58,7 @@ const styles = (theme, borderColor, todayColor) => ({
     marginTop: 30
   },
   todayNum: {
-    margin: "0 3px"
+    marginLeft: 3
   }
 });
 
@@ -69,13 +70,10 @@ export const SocialCard = ({
   today 
 }) => {
   const theme = useTheme();
-  const isPostive = today > 0;
-
-  const todayColor = isPostive 
+  
+  const todayColor = isPostive(today) 
     ? theme.color.status.positive 
     : theme.color.status.negative;
-
-  const formatNumber = number => Math.abs(number); 
    
   const { 
     container, 
@@ -97,9 +95,8 @@ export const SocialCard = ({
       <p css={followerNum}>{followers}</p>
       <p css={followerText}>Followers</p>
       <div css={[row, todayContainer]}>
-        {isPostive ? upIcon : downIcon}
-        <p css={todayNum}>{formatNumber(today)}</p>
-        <p>Today</p>
+        {isPostive(today) ? upIcon : downIcon}
+        <p css={todayNum}>{formatNumber(today)} Today</p>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    height: "100vh"
+    height: "100%"
   },
   wrapper: {
     width: "100%",
