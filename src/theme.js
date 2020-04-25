@@ -14,7 +14,7 @@ export const lightTheme = {
       secondary: "#63687E"
     },
     status: {
-      postive: "#1DB489",
+      positive: "#1DB489",
       negative: "#DC414C"
     },
     social: {
@@ -43,7 +43,7 @@ export const darkTheme = {
       secondary: "#8B97C6"
     },
     status: {
-      postive: "#1DB489",
+      positive: "#1DB489",
       negative: "#DC414C"
     },
     social: {

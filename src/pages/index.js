@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
+import { SocialCards } from "../components/SocialCards";
 import { ThemeProvider } from "emotion-theming";
 import { lightTheme, darkTheme } from "../theme";
 
@@ -12,6 +13,7 @@ const IndexPage = () => {
     <ThemeProvider theme={checked ? lightTheme : darkTheme}>
       <Layout>
         <Header toggleTheme={toggleTheme} checked={checked} />
+        <SocialCards />
       </Layout>
     </ThemeProvider>
   )
