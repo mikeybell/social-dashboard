@@ -11,16 +11,53 @@ const styles = (theme, borderColor, todayColor) => ({
     background: theme.color.ui[300],
     padding: 24,
     borderRadius: 3,
-    borderTop: "5px solid",
-    borderColor: borderColor
+    position: "relative",
+    "&:before": {
+      content: "''",
+      height: 5,
+      background: borderColor,
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      borderRadius: "3px 3px 0 0"
+    }
   },
   row: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center"
   },
-  todayStyle: {
-    color: todayColor
+  account: {
+    marginBottom: 30
+  },
+  acctNameStyle: {
+    color: theme.color.text.secondary,
+    fontWeight: 700,
+    fontSize: "0.8rem",
+    marginLeft: 8,
+  },
+  followerNum: {
+    color: theme.color.text.primary,
+    fontWeight: 700,
+    fontSize: "3.5rem",
+    lineHeight: 1
+  },
+  followerText: {
+    color: theme.color.text.secondary,
+    fontWeight: 400,
+    fontSize: "0.8rem",
+    textTransform: "uppercase",
+    letterSpacing: 6
+  },
+  todayContainer: {
+    color: todayColor,
+    fontWeight: 700,
+    fontSize: "0.8rem",
+    marginTop: 30
+  },
+  todayNum: {
+    margin: "0 3px"
   }
 });
 
@@ -32,27 +69,36 @@ export const SocialCard = ({
   today 
 }) => {
   const theme = useTheme();
-  const isPostiveStatus = today > 0;
-  
-  const todayColor = isPostiveStatus 
+  const isPostive = today > 0;
+
+  const todayColor = isPostive 
     ? theme.color.status.positive 
     : theme.color.status.negative;
 
   const formatNumber = number => Math.abs(number); 
    
-  const { container, row, todayStyle } = styles(theme, borderColor, todayColor);
+  const { 
+    container, 
+    row, 
+    account,
+    acctNameStyle, 
+    followerNum,
+    followerText,
+    todayContainer,
+    todayNum 
+  } = styles(theme, borderColor, todayColor);
 
   return (
     <div css={container}>
-      <div css={row}>
+      <div css={[row, account]}>
         {icon}
-        <p>{acctName}</p>
+        <p css={acctNameStyle}>{acctName}</p>
       </div>
-      <p>{followers}</p>
-      <p>Followers</p>
-      <div css={[row, todayStyle]}>
-        {isPostiveStatus ? upIcon : downIcon}
-        <p>{formatNumber(today)}</p>
+      <p css={followerNum}>{followers}</p>
+      <p css={followerText}>Followers</p>
+      <div css={[row, todayContainer]}>
+        {isPostive ? upIcon : downIcon}
+        <p css={todayNum}>{formatNumber(today)}</p>
         <p>Today</p>
       </div>
     </div>

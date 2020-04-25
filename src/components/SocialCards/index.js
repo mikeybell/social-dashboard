@@ -4,16 +4,18 @@ import { useTheme } from "emotion-theming";
 import { config } from "./config";
 import { SocialCard } from "./SocialCard";
 
-const styles = (theme) => ({
+const { container } = ({
   container: {
-    display: "flex",
-    justifyContent: "space-between"
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+    columnGap: 20,
+    rowGap: 20,
+    margin: "50px 0"
   },
 });
 
 export const SocialCards = () => {
   const theme = useTheme();
-  const { container } = styles(theme);
 
   return (
     <div css={container}>

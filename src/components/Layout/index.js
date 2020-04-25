@@ -8,7 +8,8 @@ const styles = theme => ({
     background: theme.color.ui[100],
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    height: "100vh"
   },
   wrapper: {
     width: "100%",

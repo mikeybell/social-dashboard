@@ -5,6 +5,7 @@ import { useTheme } from "emotion-theming";
 const styles = (theme, checked) => ({
   container: {
     display: "flex",
+    alignItems: "center",
     "@media(max-width: 375px)": {
       justifyContent: "space-between",
       width: "100%",
@@ -16,6 +17,7 @@ const styles = (theme, checked) => ({
   text: {
     fontSize: "0.8rem",
     fontWeight: 700,
+    lineHeight: 1,
     color: theme.color.text.secondary,
     marginRight: 10,
     marginBottom: 0
