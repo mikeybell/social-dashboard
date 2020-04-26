@@ -26,8 +26,9 @@ export const Overview = () => {
     <Fragment>
       <h2 css={header}>Overview - Today</h2>
       <div css={container}>
-        {config.map(card => (
+        {config.map((card, index) => (
           <OverviewCard
+            key={index}
             type={card.type}
             icon={card.icon}
             count={card.count}

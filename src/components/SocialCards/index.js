@@ -19,8 +19,9 @@ export const SocialCards = () => {
 
   return (
     <div css={container}>
-      {config.map(platform => (
+      {config.map((platform, index) => (
         <SocialCard
+          key={index}
           borderColor={theme.color.social[platform.name]}
           icon={platform.icon}
           acctName={platform.acctName}
